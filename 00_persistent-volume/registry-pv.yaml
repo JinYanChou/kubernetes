@@ -14,10 +14,5 @@ spec:
   local:
     path: /root/data/registry
   nodeAffinity:
-    required:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: kubernetes.io/hostname
-          operator: In
-          values:
-          - node2.local
+    nodeSelector:
+      data-storage: "true"
