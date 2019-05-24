@@ -15,10 +15,9 @@ spec:
     path: /root/data/gitea
   nodeAffinity:
     requiredDuringSchedulingIgnoredDuringExecution:
-      nodeSelectorTerms:
-        labelSelector:
-          matchExpressions:
-          - key: data-storage
-            operator: In
-            values:
-            - true
+      labelSelector:
+        matchExpressions:
+        - key: data-storage
+          operator: In
+          values:
+          - true
