@@ -14,10 +14,10 @@ spec:
   local:
     path: /root/data/gitea
   nodeAffinity:
-    requiredDuringSchedulingIgnoredDuringExecution:
-      labelSelector:
-        matchExpressions:
-        - key: data-storage
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
           operator: In
           values:
-          - true
+          - example-node
