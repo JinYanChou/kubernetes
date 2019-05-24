@@ -18,6 +18,6 @@ spec:
       nodeSelectorTerms:
       - matchExpressions:
         - key: kubernetes.io/hostname
-          operator: In
+          operator: Exists
           values:
-          - example-node
+          - node2
