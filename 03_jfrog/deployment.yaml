@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jfrog
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jfrog
+  template:
+    metadata:
+      labels:
+        app: jfrog
+    spec:
+      containers:
+        - name: jfrog
+          image: docker.bintray.io/jfrog/artifactory-oss:6.10.1
+          ports:
+          - name: http
+            containerPort: 8081
+          volumeMounts:
+          - name: data-store
+            mountPath: "/var/opt/jfrog/artifactory"
+      volumes:
+        - name: data-store
+          persistentVolumeClaim:
+            claimName: jfrog-pvc
