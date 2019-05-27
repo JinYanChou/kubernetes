@@ -7,9 +7,10 @@ metadata:
     traefik.frontend.rule.type: PathPrefixStrip
 spec:
   rules:
+  - host: jfrog.cathaylife.com.tw
   - http:
       paths:
-      - backend:
+      - path: /
+        backend:
           serviceName: jfrog-service
           servicePort: 8081
-        path: /artifactory

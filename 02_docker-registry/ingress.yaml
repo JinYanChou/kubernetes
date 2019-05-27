@@ -7,9 +7,10 @@ metadata:
     traefik.frontend.rule.type: PathPrefixStrip
 spec:
   rules:
-  - http:
+  - host: registry.cathaylife.com.tw
+    http:
       paths:
-      - backend:
+      - path: /
+        backend:
           serviceName: docker-registry
           servicePort: 5000
-        path: /
