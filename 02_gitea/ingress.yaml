@@ -7,8 +7,7 @@ metadata:
     traefik.frontend.rule.type: PathPrefixStrip
 spec:
   rules:
-  - host: gitea.cathaylife.com.tw
-    http:
+  - http:
       paths:
       - path: /gitea
         backend:
