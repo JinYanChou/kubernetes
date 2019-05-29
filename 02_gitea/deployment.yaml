@@ -25,7 +25,6 @@ spec:
         volumeMounts:
         - mountPath: /data
           name: git-data
-          subPath: git-data
       volumes:
       - name: git-data
         persistentVolumeClaim:
