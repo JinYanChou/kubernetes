@@ -2,12 +2,14 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: nfs-client-provisioner
+  namespace: default
 
 ---
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: nfs-client-provisioner-runner
+  namespace: default
 rules:
   - apiGroups: [""]
     resources: ["persistentvolumes"]
@@ -27,6 +29,7 @@ kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: run-nfs-client-provisioner
+  namespace: default
 subjects:
   - kind: ServiceAccount
     name: nfs-client-provisioner
@@ -40,6 +43,7 @@ kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: leader-locking-nfs-client-provisioner
+  namespace: default
 rules:
   - apiGroups: [""]
     resources: ["endpoints"]
@@ -50,6 +54,7 @@ kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: leader-locking-nfs-client-provisioner
+  namespace: default
 subjects:
   - kind: ServiceAccount
     name: nfs-client-provisioner
