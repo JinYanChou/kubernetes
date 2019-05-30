@@ -8,7 +8,7 @@ metadata:
     traefik.frontend.rule.type: PathPrefixStrip
 spec:
   rules:
-  - host: jfrog.cathaylife.com.tw
+  - host: jfrog.cathay
     http:
       paths:
       - path: /

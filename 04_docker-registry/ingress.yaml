@@ -8,7 +8,7 @@ metadata:
     traefik.frontend.rule.type: PathPrefixStrip
 spec:
   rules:
-  - host: registry.cathaylife.com.tw
+  - host: hub.cathay
     http:
       paths:
       - path: /
