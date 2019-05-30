@@ -9,7 +9,7 @@ metadata:
 spec:
   rules:
   - host: jfrog.cathaylife.com.tw
-  - http:
+    http:
       paths:
       - path: /
         backend:

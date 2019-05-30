@@ -22,7 +22,7 @@ spec:
   rules:
   - host: traefik.cathaylife.com.tw
     http:
-      paths:
+      paths: /
       - backend:
           serviceName: traefik-web-ui
           servicePort: 80
