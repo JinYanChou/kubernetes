@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: docker-registry
+  namespace: test-namespace
   labels:
     app: docker-registry
 spec:

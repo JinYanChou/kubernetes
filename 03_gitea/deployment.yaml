@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: gitea-deployment
+  namespace: test-namespace
   labels:
     app: gitea
 spec:

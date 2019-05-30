@@ -1,7 +1,8 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: gitea-pvc
+  name: jfrog-pvc
+  namespace: test-namespace
   annotations:
     volume.beta.kubernetes.io/storage-class: "my-nfs-storage"
 spec:
@@ -9,4 +10,4 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 2Gi
+      storage: 50Gi

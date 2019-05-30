@@ -1,16 +1,16 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: jfrog-ingress
+  name: gitea-ingress
+  namespace: test-namespace
   annotations:
     kubernetes.io/ingress.class: traefik
     traefik.frontend.rule.type: PathPrefixStrip
 spec:
   rules:
-  - host: jfrog.cathaylife.com.tw
   - http:
       paths:
-      - path: /
+      - path: /gitea
         backend:
-          serviceName: jfrog-service
-          servicePort: 8081
+          serviceName: gitea-service
+          servicePort: 3000
