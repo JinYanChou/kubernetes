@@ -26,3 +26,7 @@ spec:
         - name: data-store
           persistentVolumeClaim:
             claimName: jfrog-pvc
+      hostAliases:
+      - ip: "52.25.147.105"
+        hostnames:
+        - "jcenter.bintray.com"
