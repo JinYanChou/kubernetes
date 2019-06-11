@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mysql-stateful
+  namespace: test-namespace
+spec:
+  serviceName: "mysql"
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: mysql:5.6
+        envFrom:
+          - configMapRef:
+              name: mysql-config
+        ports:
+        - containerPort: 3306
+          name: mysqldb
+        volumeMounts:
+        - name: mysqldb
+          mountPath: /var/lib/mysql
+          subPath: mysql
+  volumeClaimTemplates:
+  - metadata:
+      name: mysqldb
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: my-nfs-storage
+      resources:
+        requests:
+          storage: 3Gi
