@@ -6,7 +6,7 @@ metadata:
   labels:
     app: mysql
 data:
-  MYSQL_DATABASE: DBAB
   MYSQL_ROOT_PASSWORD: cathaylife
-  MYSQL_USER: dbab
-  MYSQL_PASSWORD: dbab
+  # MYSQL_DATABASE: DBAB
+  # MYSQL_USER: dbab
+  # MYSQL_PASSWORD: dbab
