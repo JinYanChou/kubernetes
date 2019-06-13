@@ -7,6 +7,6 @@ metadata:
     app: mycat-service
 spec:
   ports:
-  - port: 8806
+  - port: 8066
   selector:
     app: mycat
