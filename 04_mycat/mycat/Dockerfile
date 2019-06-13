@@ -9,6 +9,6 @@ RUN wget http://dl.mycat.io/1.6.6.1/Mycat-server-1.6.6.1-release-20181031195535-
     && cp -r /mycat/conf /root/conf \
     && chmod 755 /root/entrypoint.sh
 
-EXPOSE 3307
+EXPOSE 8066
 VOLUME ["/mycat/conf","/mycat/log"]
 ENTRYPOINT ["sh","/root/entrypoint.sh", "&"]
