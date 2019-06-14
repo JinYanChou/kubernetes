@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: mycat
-        image: hub.cathay/mycat:1.6
+        image: hub.cathay/mycat:latest
         ports:
         - containerPort: 8066
           name: mycat
