@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `DTAGA001_PROD_DEFI` (
+CREATE TABLE IF NOT EXISTS `dtaga001_prod_defi` (
   `id` int(11) NOT NULL auto_increment,
   `recid` int(11) NOT NULL default '0',
   `cvfilename` varchar(250)  NOT NULL default '',
