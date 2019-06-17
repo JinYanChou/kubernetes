@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE mycat:schema SYSTEM "schema.dtd">
+<mycat:schema xmlns:mycat="http://io.mycat/">
+
+	<schema name="DBAG" checkSQLschema="false" sqlMaxLimit="100">
+		<table name="dtaga001_prod_defi" type="global" dataNode="dn1,dn2" />
+	</schema>
+	
+	<dataNode name="dn1" dataHost="mysql-stateful-0" database="DBAG" />
+	<dataNode name="dn2" dataHost="mysql-stateful-1" database="DBAG" />
+	
+	<dataHost name="mysql-stateful-0" maxCon="1000" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
+		<heartbeat>select user()</heartbeat>
+		<writeHost host="hostM1" url="mysql-stateful-0.mysql.test-namespace.svc.cluster.local:3306" user="dbag" password="dbag" />
+	</dataHost>
+	<dataHost name="mysql-stateful-1" maxCon="1000" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
+		<heartbeat>select user()</heartbeat>
+		<writeHost host="hostM1" url="mysql-stateful-1.mysql.test-namespace.svc.cluster.local:3306" user="dbag" password="dbag" />
+	</dataHost>
+</mycat:schema>
