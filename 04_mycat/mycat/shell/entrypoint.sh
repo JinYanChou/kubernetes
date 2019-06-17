@@ -5,6 +5,7 @@
     cp /root/rule.xml /mycat/conf/rule.xml
     cp /root/schema.xml /mycat/conf/schema.xml
     cp /root/server.xml /mycat/conf/server.xml
+    cp /root/partition-pattern.txt /mycat/conf/partition-pattern.txt
 # fi
 
 for mysqlServer in `host mysql.test-namespace.svc.cluster.local | awk '{print $4}'`

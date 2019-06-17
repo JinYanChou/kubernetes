@@ -1,0 +1,10 @@
+# range start-end, data node index
+# ASCII
+# 8-57=0-9 阿拉伯數字
+# 64, 65-90=@, A-Z
+# 97-122=a-z
+##### first host configuration
+1-16=1
+##### second host configuration
+17-32=2
+0-0=2
