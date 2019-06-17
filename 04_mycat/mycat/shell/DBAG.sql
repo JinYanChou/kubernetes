@@ -1,11 +1,8 @@
+DROP TABLE IF EXISTS `dtaga001_prod_defi`;
 CREATE TABLE IF NOT EXISTS `dtaga001_prod_defi` (
-  `id` int(11) NOT NULL auto_increment,
-  `recid` int(11) NOT NULL default '0',
-  `cvfilename` varchar(250)  NOT NULL default '',
-  `cvpagenumber`  int(11) NULL,
-  `cilineno` int(11)  NULL,
-  `batchname`  varchar(100) NOT NULL default '',
-  `type` varchar(20) NOT NULL default '',
-  `data` varchar(100) NOT NULL default '',
-   PRIMARY KEY  (`id`)
-);
+  `PROD_ID` VARCHAR(3) NOT NULL COMMENT '商品代號',
+  `PROD_NAME` VARCHAR(60) COMMENT '商品中文全名'
+) ENGINE=InnoDB DEFAULT CHARACTER=utf8 COMMENT='基本資料定義檔';
+ALTER TABLE `dtaga001_prod_defi`
+  ADD CONSTRAINT `DTAGA001_PK` PRIMARY KEY 
+    (`PROD_ID`);

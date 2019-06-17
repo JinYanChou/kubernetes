@@ -27,6 +27,9 @@ spec:
         - name: mysqldb
           mountPath: /var/lib/mysql
           subPath: mysql
+        - name: mysqldb
+          mountPath: /etc/mysql
+          subPath: mysql-config
   volumeClaimTemplates:
   - metadata:
       name: mysqldb
