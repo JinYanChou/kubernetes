@@ -3,7 +3,8 @@
 <mycat:schema xmlns:mycat="http://io.mycat/">
 
 	<schema name="DBAG" checkSQLschema="false" sqlMaxLimit="100">
-		<table name="dtaga001_prod_defi" dataNode="dn$1-2" rule="sharding-by-prefixpattern" />
+		<!-- <table name="dtaga001_prod_defi" dataNode="dn$1-2" rule="sharding-by-prefixpattern" /> -->
+		<table name="dtaga001_prod_defi" dataNode="dn$1-2" rule="sharding-by-stringhash" />
 	</schema>
 	
 	<dataNode name="dn1" dataHost="mysql-stateful-0" database="DBAG" />

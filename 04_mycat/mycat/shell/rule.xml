@@ -87,6 +87,19 @@
 		</rule>
 	</tableRule>
 
+	<tableRule name="sharding-by-stringhash">
+		<rule>
+			<columns>PROD_ID</columns>
+			<algorithm>sharding-by-stringhash</algorithm>
+		</rule>
+	</tableRule>
+
+	<function name="sharding-by-stringhash" class="io.mycat.route.function.PartitionByString">
+		<property name="partitionLength">512</property>
+		<property name="partitionCount">2</property>
+		<property name="hashSlice">0:3</property>
+	</function>
+
 	<function name="sharding-by-prefixpattern" class="io.mycat.route.function.PartitionByPattern">
 		<property name="patternValue">256</property>
 		<property name="prefixLength">3</property>
