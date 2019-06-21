@@ -3,10 +3,13 @@
 <mycat:schema xmlns:mycat="http://io.mycat/">
 
 	<schema name="DBAG" checkSQLschema="false" sqlMaxLimit="100">
-		<!-- <table name="dtaga001_prod_defi" dataNode="dn$1-2" rule="sharding-by-prefixpattern" /> -->
-		<table name="dtaga001_prod_defi" dataNode="dn$1-2" rule="sharding-by-stringhash" />
+		<table name="DTAGA001_PROD_DEFI" dataNode="dn$1-2" rule="sharding-by-stringhash-dtaga001" />
 	</schema>
 	
+	<schema name="DBAB" checkSQLschema="false" sqlMaxLimit="100">
+		<table name="DTAB0204" dataNode="dn$1-2" rule="sharding-by-stringhash-dtab0204" />
+	</schema>
+
 	<dataNode name="dn1" dataHost="mysql-stateful-0" database="DBAG" />
 	<dataNode name="dn2" dataHost="mysql-stateful-1" database="DBAG" />
 	

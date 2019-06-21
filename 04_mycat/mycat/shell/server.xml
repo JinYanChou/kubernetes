@@ -31,9 +31,9 @@
 		
 	</system>
 
-	<user name="dbag">
-		<property name="password">dbag</property>
-		<property name="schemas">DBAG</property>
+	<user name="ebaf">
+		<property name="password">ebaf</property>
+		<property name="schemas">DBAB,DBAG</property>
 		<property name="readOnly">false</property>
 	</user>
 
