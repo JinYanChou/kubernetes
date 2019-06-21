@@ -2,25 +2,25 @@
 <!DOCTYPE mycat:schema SYSTEM "schema.dtd">
 <mycat:schema xmlns:mycat="http://io.mycat/">
 
-	<schema name="DBAG" checkSQLschema="false" sqlMaxLimit="100">
-		<table name="DTAGA001_PROD_DEFI" dataNode="dn$1-2" rule="sharding-by-stringhash-dtaga001" />
+	<schema name="dbag" checkSQLschema="false" sqlMaxLimit="100">
+		<table name="dtaga001_prod_defi" dataNode="dn$1-2" rule="sharding-by-stringhash-dtaga001" />
 	</schema>
 	
-	<schema name="DBAB" checkSQLschema="false" sqlMaxLimit="100">
-		<table name="DTAB0204" dataNode="dn$1-2" rule="sharding-by-stringhash-dtab0204" />
+	<schema name="dbab" checkSQLschema="false" sqlMaxLimit="100">
+		<table name="dtab0204" dataNode="dn$1-2" rule="sharding-by-stringhash-dtab0204" />
 	</schema>
 
-	<dataNode name="dn1" dataHost="mysql-stateful-0" database="DBAG" />
-	<dataNode name="dn2" dataHost="mysql-stateful-1" database="DBAG" />
+	<dataNode name="dn1" dataHost="mysql-stateful-0" database="CSR" />
+	<dataNode name="dn2" dataHost="mysql-stateful-1" database="CSR" />
 	
 	<dataHost name="mysql-stateful-0" maxCon="1000" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
 		<heartbeat>select user()</heartbeat>
-		<writeHost host="hostM1" url="mysql-stateful-0.mysql.test-namespace.svc.cluster.local:3306" user="dbag" password="dbag" />
+		<writeHost host="hostM1" url="mysql-stateful-0.mysql.test-namespace.svc.cluster.local:3306" user="root" password="cathaylife" />
 	</dataHost>
 	
 	<dataHost name="mysql-stateful-1" maxCon="1000" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
 		<heartbeat>select user()</heartbeat>
-		<writeHost host="hostM1" url="mysql-stateful-1.mysql.test-namespace.svc.cluster.local:3306" user="dbag" password="dbag" />
+		<writeHost host="hostM1" url="mysql-stateful-1.mysql.test-namespace.svc.cluster.local:3306" user="root" password="cathaylife" />
 	</dataHost>
 
 </mycat:schema>

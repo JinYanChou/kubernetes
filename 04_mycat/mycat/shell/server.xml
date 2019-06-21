@@ -33,7 +33,7 @@
 
 	<user name="ebaf">
 		<property name="password">ebaf</property>
-		<property name="schemas">DBAB,DBAG</property>
+		<property name="schemas">dbab,dbag</property>
 		<property name="readOnly">false</property>
 	</user>
 
