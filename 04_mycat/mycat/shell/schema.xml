@@ -15,12 +15,12 @@
 	
 	<dataHost name="mysql-stateful-0" maxCon="1000" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
 		<heartbeat>select user()</heartbeat>
-		<writeHost host="hostM1" url="mysql-stateful-0.mysql.test-namespace.svc.cluster.local:3306" user="root" password="cathaylife" />
+		<writeHost host="hostM1" url="mysql-stateful-0.mysql.test-namespace.svc.cluster.local:3306" user="ebaf" password="ebaf" />
 	</dataHost>
 	
 	<dataHost name="mysql-stateful-1" maxCon="1000" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
 		<heartbeat>select user()</heartbeat>
-		<writeHost host="hostM1" url="mysql-stateful-1.mysql.test-namespace.svc.cluster.local:3306" user="root" password="cathaylife" />
+		<writeHost host="hostM1" url="mysql-stateful-1.mysql.test-namespace.svc.cluster.local:3306" user="ebaf" password="ebaf" />
 	</dataHost>
 
 </mycat:schema>
