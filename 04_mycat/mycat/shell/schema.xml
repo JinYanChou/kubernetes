@@ -10,8 +10,8 @@
 		<table name="dtab0204" dataNode="dn$1-2" rule="sharding-by-stringhash-dtab0204" />
 	</schema>
 
-	<dataNode name="dn1" dataHost="mysql-stateful-0" database="CSR" />
-	<dataNode name="dn2" dataHost="mysql-stateful-1" database="CSR" />
+	<dataNode name="dn1" dataHost="mysql-stateful-0" database="dbab" />
+	<dataNode name="dn2" dataHost="mysql-stateful-1" database="dbab" />
 	
 	<dataHost name="mysql-stateful-0" maxCon="1000" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
 		<heartbeat>select user()</heartbeat>
