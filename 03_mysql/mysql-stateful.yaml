@@ -5,7 +5,7 @@ metadata:
   namespace: test-namespace
 spec:
   serviceName: "mysql"
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: mysql
