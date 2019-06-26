@@ -4,47 +4,29 @@
 
 	<tableRule name="sharding-by-stringhash-dtabm001">
 		<rule>
-			<columns>APLY_NO,TRN_KIND,POLICY_NO</columns>
-			<algorithm>sharding-by-stringhash-dtabm001</algorithm>
+			<columns>APLY_NO</columns>
+			<algorithm>sharding-by-stringhash</algorithm>
 		</rule>
 	</tableRule>
 
 	<tableRule name="sharding-by-stringhash-dtab0007">
 		<rule>
-			<columns>POLICY_NO,PROD_ID,ID,SP_EFT_DATE</columns>
-			<algorithm>sharding-by-stringhash-dtab0007</algorithm>
+			<columns>POLICY_NO</columns>
+			<algorithm>sharding-by-stringhash</algorithm>
 		</rule>
 	</tableRule>
 
 	<tableRule name="sharding-by-stringhash-dtaga505">
 		<rule>
-			<columns>PROD_ID,AGE,SEX,PAY_PRD,PREM_SPEC_KEY1,PREM_SPEC_KEY2,PASS_YEAR</columns>
-			<algorithm>sharding-by-stringhash-dtaga505</algorithm>
+			<columns>PROD_ID</columns>
+			<algorithm>sharding-by-stringhash</algorithm>
 		</rule>
 	</tableRule>
 
-	<function name="sharding-by-stringhash-dtabm001" class="io.mycat.route.function.PartitionByString">
-		<property name="partitionLength">256</property>
-		<property name="partitionCount">4</property>
-		<property name="hashSlice">0:4</property>
-	</function>
-
-	<function name="sharding-by-stringhash-dtab0007" class="io.mycat.route.function.PartitionByString">
-		<property name="partitionLength">256</property>
-		<property name="partitionCount">4</property>
-		<property name="hashSlice">0:4</property>
-	</function>
-
-	<function name="sharding-by-stringhash-dtaga505" class="io.mycat.route.function.PartitionByString">
-		<property name="partitionLength">256</property>
-		<property name="partitionCount">4</property>
-		<property name="hashSlice">0:4</property>
-	</function>
-
 	<function name="sharding-by-stringhash" class="io.mycat.route.function.PartitionByString">
-		<property name="partitionLength">512</property>
-		<property name="partitionCount">3</property>
-		<property name="hashSlice">0:4</property>
+		<property name="partitionLength">256</property>
+		<property name="partitionCount">4</property>
+		<property name="hashSlice">0:10</property>
 	</function>
 
 </mycat:rule>
