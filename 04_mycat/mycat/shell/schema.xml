@@ -3,14 +3,15 @@
 <mycat:schema xmlns:mycat="http://io.mycat/">
 
 	<schema name="mycat" checkSQLschema="false" sqlMaxLimit="100">
-		<table name="dtabm001" dataNode="dn$1-2" rule="sharding-by-stringhash-dtabm001" />
-		<table name="dtab0007" dataNode="dn$1-2" rule="sharding-by-stringhash-dtab0007" />
-		<table name="dtaga505" dataNode="dn$1-2" type="sharding-by-stringhash-dtaga505" />
+		<table name="dtabm001" dataNode="dn$1-4" rule="sharding-by-stringhash-dtabm001" />
+		<table name="dtab0007" dataNode="dn$1-4" rule="sharding-by-stringhash-dtab0007" />
+		<table name="dtaga505" dataNode="dn$1-4" rule="sharding-by-stringhash-dtaga505" />
 	</schema>
 
 	<dataNode name="dn1" dataHost="mysql-stateful-0" database="mycat" />
 	<dataNode name="dn2" dataHost="mysql-stateful-1" database="mycat" />
 	<dataNode name="dn3" dataHost="mysql-stateful-2" database="mycat" />
+	<dataNode name="dn4" dataHost="mysql-stateful-3" database="mycat" />
 	
 	<dataHost name="mysql-stateful-0" maxCon="1000" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
 		<heartbeat>select user()</heartbeat>
@@ -25,6 +26,11 @@
 	<dataHost name="mysql-stateful-2" maxCon="1000" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
 		<heartbeat>select user()</heartbeat>
 		<writeHost host="hostM1" url="mysql-stateful-2.mysql.test-namespace.svc.cluster.local:3306" user="ebaf" password="ebaf" />
+	</dataHost>
+
+	<dataHost name="mysql-stateful-3" maxCon="1000" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
+		<heartbeat>select user()</heartbeat>
+		<writeHost host="hostM1" url="mysql-stateful-3.mysql.test-namespace.svc.cluster.local:3306" user="ebaf" password="ebaf" />
 	</dataHost>
 
 </mycat:schema>
