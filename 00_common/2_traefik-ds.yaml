@@ -28,9 +28,6 @@ spec:
         - name: http
           containerPort: 80
           hostPort: 80
-        - name: ssh
-          containerPort: 22
-          hostPort: 22
         - name: admin
           containerPort: 8080
           hostPort: 8080
