@@ -6,3 +6,4 @@ metadata:
 provisioner: my-nfs-provisioner
 parameters:
   archiveOnDelete: "false"
+reclaimPolicy: Retain
