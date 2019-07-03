@@ -8,6 +8,8 @@
 		<table name="dtaga505" dataNode="dn$1-4" rule="sharding-by-stringhash-dtaga505" />
 		<table name="dtab0204" dataNode="dn$1-4" rule="sharding-by-stringhash-dtab0204" />
 		<table name="dtab0001" dataNode="dn$1-4" rule="sharding-by-stringhash-dtab0001" />
+		<table name="dtab0001_ta" dataNode="dn$1-4" rule="sharding-by-stringhash-dtab0001" />
+		<table name="dtab0001_tb" dataNode="dn$1-4" rule="sharding-by-stringhash-dtab0001" />
 	</schema>
 
 	<dataNode name="dn1" dataHost="mysql-stateful-0" database="mycat" />
