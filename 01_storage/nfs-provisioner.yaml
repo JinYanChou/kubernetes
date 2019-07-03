@@ -31,3 +31,5 @@ spec:
           nfs:
             server: node2.k8s
             path: /zookeeper
+      nodeSelector:
+        nodetype: worker

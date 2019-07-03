@@ -31,3 +31,5 @@ spec:
       - name: git-data
         persistentVolumeClaim:
           claimName: gitea-pvc
+      nodeSelector:
+        nodetype: worker

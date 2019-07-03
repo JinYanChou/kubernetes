@@ -32,3 +32,5 @@ spec:
       - name: mycat-data
         persistentVolumeClaim:
           claimName: mycat-pvc
+      nodeSelector:
+        nodetype: worker

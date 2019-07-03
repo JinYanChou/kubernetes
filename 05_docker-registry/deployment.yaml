@@ -31,3 +31,5 @@ spec:
         - name: image-store
           persistentVolumeClaim:
             claimName: registry-pvc
+      nodeSelector:
+        nodetype: worker

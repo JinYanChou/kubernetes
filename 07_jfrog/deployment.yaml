@@ -26,3 +26,5 @@ spec:
         - name: data-store
           persistentVolumeClaim:
             claimName: jfrog-pvc
+      nodeSelector:
+        nodetype: worker
