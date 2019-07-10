@@ -8,9 +8,10 @@ metadata:
     traefik.frontend.rule.type: PathPrefixStrip
 spec:
   rules:
-  - http:
+  - host: jenkins.cathay
+    http:
       paths:
-      - path: /jenkins
+      - path: /
         backend:
           serviceName: jenkins-service
           servicePort: 8080
