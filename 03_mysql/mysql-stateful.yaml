@@ -27,9 +27,14 @@ spec:
         - name: mysqldb
           mountPath: /var/lib/mysql
           subPath: mysql
-      volumes:
-      - name: mysqldb
-        persistentVolumeClaim:
-          claimName: mysql-pvc
       nodeSelector:
         nodetype: db
+  volumeClaimTemplates:
+  - metadata:
+      name: mysqldb
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: my-nfs-storage
+      resources:
+        requests:
+          storage: 3Gi
