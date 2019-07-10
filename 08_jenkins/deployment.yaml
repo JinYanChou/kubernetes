@@ -21,9 +21,7 @@ spec:
         imagePullPolicy: IfNotPresent
         env:
           - name: JENKINS_ARGS
-            value: "--prefix=/jenkins"
-          - name: JENKINS_OPTS
-            value: "--prefix=/jenkins"
+            value: "--prefix=/jenkins --httpPort=80"
         volumeMounts:
         - name: jenkins-home
           mountPath: /var/jenkins_home
