@@ -20,7 +20,7 @@ spec:
         image: jenkins/jenkins:lts-alpine
         imagePullPolicy: IfNotPresent
         env:
-          - name: JENKINS_OPTS
+          - name: JENKINS_ARGS
             value: "--prefix=/jenkins"
         volumeMounts:
         - name: jenkins-home
