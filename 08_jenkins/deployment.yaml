@@ -20,7 +20,7 @@ spec:
         image: jenkins/jenkins:lts-alpine
         imagePullPolicy: IfNotPresent
         env:
-          - name: JENKINS_ARGS
+          - name: JENKINS_OPTS
             value: "--prefix=/jenkins --httpPort=80"
         volumeMounts:
         - name: jenkins-home
