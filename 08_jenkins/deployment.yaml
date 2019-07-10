@@ -19,9 +19,6 @@ spec:
       - name: jenkins
         image: jenkins/jenkins:lts-alpine
         imagePullPolicy: IfNotPresent
-        env:
-          - name: JENKINS_ARGS
-            value: "--prefix=/jenkins"
         volumeMounts:
         - name: jenkins-home
           mountPath: /var/jenkins_home
