@@ -16,4 +16,3 @@ spec:
     - port: 50000
       name: agent
       targetPort: 50000
-      nodePort: 50000
