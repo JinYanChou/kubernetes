@@ -3,14 +3,16 @@
 <mycat:schema xmlns:mycat="http://io.mycat/">
 
 	<schema name="mycat" checkSQLschema="false" sqlMaxLimit="100">
-		<table name="dtabm001" dataNode="dn$1-4" rule="sharding-by-stringhash-dtabm001" />
-		<table name="dtab0007" dataNode="dn$1-4" rule="sharding-by-stringhash-dtab0007" />
-		<table name="dtaga505" dataNode="dn$1-4" rule="sharding-by-stringhash-dtaga505" />
-		<table name="dtab0204" dataNode="dn$1-4" rule="sharding-by-stringhash-dtab0204" />
-		<table name="dtab0001" dataNode="dn$1-4" rule="sharding-by-stringhash-dtab0001" />
-		<table name="dtab0001_ta" dataNode="dn$1-4" rule="sharding-by-stringhash-dtab0001" />
-		<table name="dtab0001_tb" dataNode="dn$1-4" rule="sharding-by-stringhash-dtab0001" />
-		<table name="dtab0001_tc" dataNode="dn$1-4" rule="sharding-by-stringhash-dtab0001" />
+		<table name="dtabn001" dataNode="dn$1-4" rule="sharding-by-stringhash-apply-no" />
+		<table name="dtabp001" dataNode="dn$1-4" rule="sharding-by-stringhash-policy-no" />
+		<table name="dtabm001" dataNode="dn$1-4" rule="sharding-by-stringhash-policy-no" />
+		<table name="dtab0007" dataNode="dn$1-4" rule="sharding-by-stringhash-policy-no" />
+		<table name="dtab0009" dataNode="dn$1-4" rule="sharding-by-stringhash-policy-no" />
+		<table name="dtab0010" dataNode="dn$1-4" rule="sharding-by-stringhash-policy-no" />
+		<table name="dtab0013" dataNode="dn$1-4" rule="sharding-by-stringhash-policy-no" />
+		<table name="dtabb001" dataNode="dn$1-4" rule="sharding-by-stringhash-policy-no" />
+		<table name="dtabd001" dataNode="dn$1-4" rule="sharding-by-stringhash-policy-no" />
+		<table name="dtaga505" dataNode="dn$1-4" rule="sharding-by-stringhash-prod-id" />
 	</schema>
 
 	<dataNode name="dn1" dataHost="mysql-stateful-0" database="mycat" />

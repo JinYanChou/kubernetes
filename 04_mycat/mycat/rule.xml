@@ -2,37 +2,23 @@
 <!DOCTYPE mycat:rule SYSTEM "rule.dtd">
 <mycat:rule xmlns:mycat="http://io.mycat/">
 
-	<tableRule name="sharding-by-stringhash-dtabm001">
+	<tableRule name="sharding-by-stringhash-apply-no">
 		<rule>
 			<columns>APLY_NO</columns>
 			<algorithm>sharding-by-stringhash</algorithm>
 		</rule>
 	</tableRule>
 
-	<tableRule name="sharding-by-stringhash-dtab0007">
+	<tableRule name="sharding-by-stringhash-policy-no">
 		<rule>
 			<columns>POLICY_NO</columns>
 			<algorithm>sharding-by-stringhash</algorithm>
 		</rule>
 	</tableRule>
 
-	<tableRule name="sharding-by-stringhash-dtaga505">
+	<tableRule name="sharding-by-stringhash-prod-id">
 		<rule>
 			<columns>PROD_ID</columns>
-			<algorithm>sharding-by-stringhash</algorithm>
-		</rule>
-	</tableRule>
-
-	<tableRule name="sharding-by-stringhash-dtab0204">
-		<rule>
-			<columns>APLY_NO</columns>
-			<algorithm>sharding-by-stringhash</algorithm>
-		</rule>
-	</tableRule>
-
-	<tableRule name="sharding-by-stringhash-dtab0001">
-		<rule>
-			<columns>POLICY_NO</columns>
 			<algorithm>sharding-by-stringhash</algorithm>
 		</rule>
 	</tableRule>
