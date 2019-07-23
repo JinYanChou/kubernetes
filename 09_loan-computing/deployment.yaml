@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: loan-computing-deployment
+  namespace: test-namespace
+  labels:
+    app: loan-computing
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: loan-computing
+  template:
+    metadata:
+      labels:
+        app: loan-computing
+    spec:
+      containers:
+      - name: loan-computing
+        image: hub.cathay/kafka-topic-data-loader:latest
