@@ -18,3 +18,5 @@ spec:
       containers:
       - name: loan-computing
         image: hub.cathay/kafka-topic-data-loader:latest
+      nodeSelector:
+        nodetype: worker
