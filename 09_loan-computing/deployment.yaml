@@ -21,9 +21,9 @@ spec:
       volumeMounts:
         - mountPath: /config
           name: loan-computing-data
-      volumes:
-      - name: loan-computing-data
-        persistentVolumeClaim:
-          claimName: loan-computing-pvc
-      nodeSelector:
-        nodetype: worker
+    volumes:
+    - name: loan-computing-data
+      persistentVolumeClaim:
+        claimName: loan-computing-pvc
+    nodeSelector:
+      nodetype: worker
