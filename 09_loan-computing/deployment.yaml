@@ -18,5 +18,12 @@ spec:
       containers:
       - name: loan-computing
         image: hub.cathay/kafka-topic-data-loader:latest
+      volumeMounts:
+        - mountPath: /config
+          name: loan-computing-data
+      volumes:
+      - name: loan-computing-data
+        persistentVolumeClaim:
+          claimName: loan-computing-pvc
       nodeSelector:
         nodetype: worker
