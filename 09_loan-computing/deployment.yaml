@@ -18,7 +18,7 @@ spec:
       containers:
       - name: loan-computing
         image: hub.cathay/kafka-topic-data-loader:latest
-      volumeMounts:
+        volumeMounts:
         - mountPath: /config
           name: loan-computing-data
     volumes:
