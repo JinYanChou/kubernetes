@@ -1,28 +1,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: loan-computing-deployment
+  name: data-loader-deployment
   namespace: test-namespace
   labels:
-    app: loan-computing
+    app: data-loader
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: loan-computing
+      app: data-loader
   template:
     metadata:
       labels:
-        app: loan-computing
+        app: data-loader
     spec:
       containers:
-      - name: loan-computing
+      - name: data-loader
         image: hub.cathay/kafka-topic-data-loader:latest
         volumeMounts:
         - mountPath: /config
-          name: loan-computing-data
+          name: data-loader-data
+          subPath: data-loader
       volumes:
-      - name: loan-computing-data
+      - name: data-loader-data
         persistentVolumeClaim:
           claimName: loan-computing-pvc
       nodeSelector:
