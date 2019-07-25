@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: batch-query-deployment
+  namespace: test-namespace
+  labels:
+    app: batch-query
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: batch-query
+  template:
+    metadata:
+      labels:
+        app: batch-query
+    spec:
+      containers:
+      - name: batch-query
+        image: hub.cathay/loancomputing-cmdbatch:latest
+        volumeMounts:
+        - mountPath: /config
+          name: batch-query-data
+          subPath: batch-query
+      volumes:
+      - name: batch-query-data
+        persistentVolumeClaim:
+          claimName: loan-computing-pvc
+      nodeSelector:
+        nodetype: worker
