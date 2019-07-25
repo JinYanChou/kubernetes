@@ -7,6 +7,8 @@ metadata:
     app: batch-query
 spec:
   replicas: 1
+  strategy:
+    type: Never
   selector:
     matchLabels:
       app: batch-query
