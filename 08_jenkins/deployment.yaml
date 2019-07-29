@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: jenkins
-        image: jenkins/jenkins:lts-alpine
+        image: hub.cathay/jenkins:latest
         imagePullPolicy: IfNotPresent
         env:
           - name: JENKINS_OPTS
