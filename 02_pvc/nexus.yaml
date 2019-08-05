@@ -1,0 +1,13 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: sonatype-nexus
+  namespace: test-namespace
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "my-nfs-storage"
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi

@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sonatype-nexus
+  labels:
+    app: sonatype-nexus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sonatype-nexus
+  template:
+    metadata:
+      labels:
+        app: sonatype-nexus
+    spec:
+      containers:
+      - name: sonatype-nexus
+        image: sonatype/nexus3:3.18.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: server
+          containerPort: 8081
+        - containerPort: 8551
+        - containerPort: 8552
+        - containerPort: 8553
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8081
+          initialDelaySeconds: 30
+          periodSeconds: 30
+          failureThreshold: 6
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8081
+          initialDelaySeconds: 30
+          periodSeconds: 30
+          failureThreshold: 6
+        env:
+        - name: INSTALL4J_ADD_VM_PARAMS
+          value: "
+                  -Xms1200M 
+                  -Xmx1200M 
+                  -XX:MaxDirectMemorySize=2G 
+                  -XX:+UnlockExperimentalVMOptions 
+                  -XX:+UseCGroupMemoryLimitForHeap
+                 "
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 2048Mi   
+          requests:
+            cpu: 500m
+            memory: 1024Mi
+        volumeMounts:
+        - name: sonatype-nexus-data
+          mountPath: /nexus-data
+      volumes:
+      - name: sonatype-nexus-data
+        persistentVolumeClaim:
+          claimName: sonatype-nexus
