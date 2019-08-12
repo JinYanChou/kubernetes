@@ -38,22 +38,22 @@ spec:
           initialDelaySeconds: 30
           periodSeconds: 30
           failureThreshold: 6
-        env:
-        - name: INSTALL4J_ADD_VM_PARAMS
-          value: "
-                  -Xms1200M 
-                  -Xmx1200M 
-                  -XX:MaxDirectMemorySize=2G 
-                  -XX:+UnlockExperimentalVMOptions 
-                  -XX:+UseCGroupMemoryLimitForHeap
-                 "
-        resources:
-          limits:
-            cpu: 1000m
-            memory: 2048Mi   
-          requests:
-            cpu: 500m
-            memory: 1024Mi
+        #env:
+        #- name: INSTALL4J_ADD_VM_PARAMS
+        #  value: "
+        #          -Xms1200M 
+        #          -Xmx1200M 
+        #          -XX:MaxDirectMemorySize=2G 
+        #          -XX:+UnlockExperimentalVMOptions 
+        #          -XX:+UseCGroupMemoryLimitForHeap
+        #         "
+        #resources:
+        #  limits:
+        #    cpu: 1000m
+        #    memory: 2048Mi   
+        #  requests:
+        #    cpu: 500m
+        #    memory: 1024Mi
         volumeMounts:
         - name: sonatype-nexus-data
           mountPath: /nexus-data
