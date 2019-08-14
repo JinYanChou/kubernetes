@@ -6,7 +6,6 @@ metadata:
   labels:
     app: batch-query
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: batch-query
