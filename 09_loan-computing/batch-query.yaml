@@ -15,6 +15,7 @@ spec:
       labels:
         app: batch-query
     spec:
+      restartPolicy: Never
       containers:
       - name: batch-query
         image: hub.cathay/loancomputing-cmdbatch:latest
