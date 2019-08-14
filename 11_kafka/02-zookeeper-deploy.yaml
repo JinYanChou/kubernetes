@@ -18,3 +18,5 @@ spec:
         name: zookeeper
         ports:
         - containerPort: 2181
+      nodeSelector:
+        nodetype: kafka
