@@ -19,7 +19,7 @@ spec:
         - mountPath: /config
           name: batch-query-data
           subPath: batch-query
-        args: ["9000000000", "9000001000"]
+        args: ["9000000000", "9010000000"]
       volumes:
       - name: batch-query-data
         persistentVolumeClaim:
