@@ -11,7 +11,7 @@ metadata:
   namespace: test-namespace
   name: jenkins-role
 rules:
-- apiGroups: [""]
+- apiGroups: ["extensions", "apps"]
   resources: ["ingresses","services","deployments", "pods"]
   verbs: ["create","delete","get","list","patch","update","watch"]
 - apiGroups: [""]
