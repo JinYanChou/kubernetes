@@ -1,0 +1,5 @@
+# Ignore Mac Other Files
+.DS_Store
+.localized
+*.swp
+*.swo
