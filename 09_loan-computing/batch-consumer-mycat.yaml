@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: batch-consumer-mycat-deployment
+  namespace: test-namespace
+  labels:
+    app: batch-consumer
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: batch-consumer-mycat
+  template:
+    metadata:
+      labels:
+        app: batch-consumer-mycat
+    spec:
+      containers:
+      - name: batch-consumer-mycat
+        image: hub.cathay/loancomputing-consumer-mycat:latest
+        volumeMounts:
+        - mountPath: /config
+          name: batch-consumer-data
+          subPath: batch-consumer-mycat
+      volumes:
+      - name: batch-consumer-data
+        persistentVolumeClaim:
+          claimName: loan-computing-pvc
+      nodeSelector:
+        nodetype: worker
