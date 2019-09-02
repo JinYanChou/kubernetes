@@ -11,8 +11,8 @@ metadata:
   namespace: test-namespace
   name: jenkins-role
 rules:
-- apiGroups: ["", "extensions", "apps"]
-  resources: ["ingresses","services","deployments", "pods"]
+- apiGroups: ["", "extensions", "apps", "autoscaling"]
+  resources: ["ingresses","services","deployments", "pods", "horizontalpodautoscalers"]
   verbs: ["create","delete","get","list","patch","update","watch"]
 - apiGroups: [""]
   resources: ["ingresses/exec","services/exec","deployments/exec", "pods/exec"]
