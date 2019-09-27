@@ -6,5 +6,5 @@ metadata:
   labels:
     app: postgres
 data:
-  POSTGRES_USER: postgres
+  POSTGRES_USER: mycat
   POSTGRES_PASSWORD: cathaylife

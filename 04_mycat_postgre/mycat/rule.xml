@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mycat:rule SYSTEM "rule.dtd">
+<mycat:rule xmlns:mycat="http://io.mycat/">
+
+	<tableRule name="sharding-by-stringhash-apply-no">
+		<rule>
+			<columns>APLY_NO</columns>
+			<algorithm>sharding-by-stringhash</algorithm>
+		</rule>
+	</tableRule>
+
+	<tableRule name="sharding-by-stringhash-policy-no">
+		<rule>
+			<columns>POLICY_NO</columns>
+			<algorithm>sharding-by-stringhash</algorithm>
+		</rule>
+	</tableRule>
+
+	<tableRule name="sharding-by-stringhash-prod-id">
+		<rule>
+			<columns>PROD_ID</columns>
+			<algorithm>sharding-by-stringhash</algorithm>
+		</rule>
+	</tableRule>
+
+	<function name="sharding-by-stringhash" class="io.mycat.route.function.PartitionByString">
+		<property name="partitionLength">256</property>
+		<property name="partitionCount">4</property>
+		<property name="hashSlice">0:10</property>
+	</function>
+
+</mycat:rule>

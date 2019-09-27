@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mycat-deployment
+  namespace: test-namespace
+  labels:
+    app: mycat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mycat
+  template:
+    metadata:
+      labels:
+        app: mycat
+    spec:
+      containers:
+      - name: mycat
+        image: hub.cathay/mycat:0.1.6
+        ports:
+        - containerPort: 8066
+          name: mycat
+        volumeMounts:
+        - mountPath: /mycat/conf
+          name: mycat-data
+          subPath: conf
+        - mountPath: /mycat/logs
+          name: mycat-data
+          subPath: logs
+      volumes:
+      - name: mycat-data
+        persistentVolumeClaim:
+          claimName: mycat-pvc
+      nodeSelector:
+        nodetype: worker
