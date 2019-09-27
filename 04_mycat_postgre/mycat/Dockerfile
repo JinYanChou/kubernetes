@@ -13,5 +13,5 @@ EXPOSE 8066
 VOLUME ["/mycat/conf","/mycat/log"]
 ENTRYPOINT ["sh","/root/entrypoint.sh", "&"]
 
-# docker build -t hub.cathay/mycat:latest -t hub.cathay/mycat:0.1.6 .
-# docker push hub.cathay/mycat:latest; docker push hub.cathay/mycat:0.1.6
+# docker build -t hub.cathay/mycat:latest -t hub.cathay/mycat:0.1.7 .
+# docker push hub.cathay/mycat:latest; docker push hub.cathay/mycat:0.1.7
