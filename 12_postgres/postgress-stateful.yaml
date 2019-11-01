@@ -27,6 +27,8 @@ spec:
         - name: postgredb
           mountPath: /var/lib/postgresql/data
           subPath: postgres
+      nodeSelector:
+        nodetype: db
   volumeClaimTemplates:
   - metadata:
       name: postgredb
