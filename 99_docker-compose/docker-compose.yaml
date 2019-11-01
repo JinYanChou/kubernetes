@@ -1,0 +1,74 @@
+version: "3"
+services:
+
+  nexus:
+    image: sonatype/nexus3:3.18.0
+    ports:
+      - "8081:8081"
+      - "5000:5000"
+      - "5100:5100"
+    volumes:
+      - nexus-data:/nexus-data
+    networks:
+      - webnet
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+  gitea:
+    image: gitea/gitea:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - git-data:/data
+    networks:
+      - webnet
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+  jenkins:
+    image: hub.cathay/jenkins:latest
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins-home:/var/jenkins_home
+      - docker-sock:/var/run/docker.sock
+    networks:
+      - webnet
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+networks:
+  webnet:
+
+volumes:
+  nexus-data:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/Users/i9200806/Desktop/nexus-data'
+  git-data:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/Users/i9200806/Desktop/git-data'
+  jenkins-home:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/Users/i9200806/Desktop/jenkins-home'
+  docker-sock:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/var/run/docker.sock'
