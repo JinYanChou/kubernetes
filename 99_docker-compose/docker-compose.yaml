@@ -36,7 +36,7 @@ services:
       - "50000:50000"
     volumes:
       - jenkins-home:/var/jenkins_home
-      - docker-sock:/var/run/docker.sock
+      - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - webnet
     deploy:
@@ -53,22 +53,16 @@ volumes:
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '/Users/i9200806/Desktop/nexus-data'
+      device: '/zookeeper/nexus-data'
   git-data:
     driver: local
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '/Users/i9200806/Desktop/git-data'
+      device: '/zookeeper/git-data'
   jenkins-home:
     driver: local
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '/Users/i9200806/Desktop/jenkins-home'
-  docker-sock:
-    driver: local
-    driver_opts:
-      type: 'none'
-      o: 'bind'
-      device: '/var/run/docker.sock'
+      device: '/zookeeper/jenkins-home'
