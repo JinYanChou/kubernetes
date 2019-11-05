@@ -31,6 +31,8 @@ services:
 
   jenkins:
     image: hub.cathay/jenkins:latest
+    environment:
+      - JENKINS_OPTS="--prefix=/jenkins"
     ports:
       - "8080:8080"
       - "50000:50000"
