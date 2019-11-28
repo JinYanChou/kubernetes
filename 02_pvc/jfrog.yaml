@@ -3,9 +3,8 @@ kind: PersistentVolumeClaim
 metadata:
   name: jfrog-pvc
   namespace: test-namespace
-  annotations:
-    volume.beta.kubernetes.io/storage-class: "my-nfs-storage"
 spec:
+  storageClassName: my-nfs-storage
   accessModes:
     - ReadWriteOnce
   resources:
