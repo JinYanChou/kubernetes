@@ -7,6 +7,9 @@ metadata:
     app: nfs-client-provisioner
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: nfs-client-provisioner
   strategy:
     type: Recreate
   template:
