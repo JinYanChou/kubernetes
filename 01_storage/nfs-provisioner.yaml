@@ -1,8 +1,10 @@
 kind: Deployment
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 metadata:
   name: nfs-client-provisioner
   namespace: test-namespace
+  labels:
+    app: nfs-client-provisioner
 spec:
   replicas: 1
   strategy:
@@ -23,13 +25,11 @@ spec:
             - name: PROVISIONER_NAME
               value: my-nfs-provisioner
             - name: NFS_SERVER
-              value: node2.k8s
+              value: 10.97.42.86
             - name: NFS_PATH
-              value: /zookeeper
+              value: /zookeeper/nfs
       volumes:
         - name: nfs-client-root
           nfs:
-            server: node2.k8s
-            path: /zookeeper
-      nodeSelector:
-        nodetype: worker
+            server: 10.97.42.86
+            path: /zookeeper/nfs
