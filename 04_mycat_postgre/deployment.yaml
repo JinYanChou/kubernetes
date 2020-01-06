@@ -17,20 +17,42 @@ spec:
     spec:
       containers:
       - name: mycat
-        image: hub.cathay/mycat:0.1.7
+        image: hub.cathay/mycat:0.1.8
         ports:
         - containerPort: 8066
           name: mycat
         volumeMounts:
-        - mountPath: /mycat/conf
-          name: mycat-data
-          subPath: conf
         - mountPath: /mycat/logs
           name: mycat-data
           subPath: logs
+        - name: mycat-rule-xml
+          mountPath: /mycat/conf/rule.xml
+          subPath: rule.xml
+        - name: mycat-schema-xml
+          mountPath: /mycat/conf/schema.xml
+          subPath: schema.xml
+        - name: mycat-server-xml
+          mountPath: /mycat/conf/server.xml
+          subPath: server.xml
       volumes:
       - name: mycat-data
         persistentVolumeClaim:
           claimName: mycat-pvc
-      nodeSelector:
-        nodetype: worker
+      - name: mycat-rule-xml
+        configMap:
+          name: mycat-configmap
+          items:
+          - key: rule.xml
+            path: rule.xml
+      - name: mycat-schema-xml
+        configMap:
+          name: mycat-configmap
+          items:
+          - key: schema.xml
+            path: schema.xml
+      - name: mycat-server-xml
+        configMap:
+          name: mycat-configmap
+          items:
+          - key: server.xml
+            path: server.xml
