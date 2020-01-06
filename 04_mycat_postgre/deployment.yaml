@@ -56,3 +56,5 @@ spec:
           items:
           - key: server.xml
             path: server.xml
+      imagePullSecrets:
+      - name: regcred
