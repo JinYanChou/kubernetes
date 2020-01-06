@@ -2,16 +2,12 @@ FROM hub.cathay/mycat-base:0.0.3
 USER root
 
 WORKDIR /root
-ADD ./shell/ /root
-ADD ./mycat.sql /root/mycat.sql
-ADD ./rule.xml /root/rule.xml
-ADD ./schema.xml /root/schema.xml
-ADD ./server.xml /root/server.xml
-RUN cp -r /mycat/conf /root/conf && chmod 755 /root/entrypoint.sh
+ADD ./entrypoint.sh .
+RUN chmod 755 entrypoint.sh
 
 EXPOSE 8066
-VOLUME ["/mycat/conf","/mycat/log"]
-ENTRYPOINT ["sh","/root/entrypoint.sh", "&"]
+VOLUME ["/mycat/log"]
+ENTRYPOINT ["sh", "/root/entrypoint.sh", "&"]
 
-# docker build -t hub.cathay/mycat:latest -t hub.cathay/mycat:0.1.7 .
-# docker push hub.cathay/mycat:latest; docker push hub.cathay/mycat:0.1.7
+# docker build -t hub.cathay/mycat:latest -t hub.cathay/mycat:0.1.9 .
+# docker push hub.cathay/mycat:latest; docker push hub.cathay/mycat:0.1.9
