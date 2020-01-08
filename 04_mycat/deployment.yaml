@@ -21,6 +21,8 @@ spec:
         ports:
         - containerPort: 8066
           name: mycat
+        - containerPort: 9066
+          name: mycat-admin
         volumeMounts:
         - mountPath: /mycat/logs
           name: mycat-data
