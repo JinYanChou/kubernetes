@@ -61,22 +61,22 @@ data:
     	
     	<dataHost name="mysql-stateful-0" maxCon="1000" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="jdbc" switchType="1"  slaveThreshold="100">
     		<heartbeat>select user()</heartbeat>
-    		<writeHost host="hostM1" url="jdbc:mysql://mysql-stateful-0.mysql.default.svc.cluster.local:3306/mycat" user="mycat" password="cathaylife" />
+    		<writeHost host="hostM1" url="jdbc:mysql://mysql-stateful-0.mysql.test-namespace.svc.cluster.local:3306/mycat" user="mycat" password="cathaylife" />
     	</dataHost>
     	
     	<dataHost name="mysql-stateful-1" maxCon="1000" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="jdbc" switchType="1"  slaveThreshold="100">
     		<heartbeat>select user()</heartbeat>
-    		<writeHost host="hostM1" url="jdbc:mysql://mysql-stateful-1.mysql.default.svc.cluster.local:3306/mycat" user="mycat" password="cathaylife" />
+    		<writeHost host="hostM1" url="jdbc:mysql://mysql-stateful-1.mysql.test-namespace.svc.cluster.local:3306/mycat" user="mycat" password="cathaylife" />
     	</dataHost>
     
     	<dataHost name="mysql-stateful-2" maxCon="1000" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="jdbc" switchType="1"  slaveThreshold="100">
     		<heartbeat>select user()</heartbeat>
-    		<writeHost host="hostM1" url="jdbc:mysql://mysql-stateful-2.mysql.default.svc.cluster.local:3306/mycat" user="mycat" password="cathaylife" />
+    		<writeHost host="hostM1" url="jdbc:mysql://mysql-stateful-2.mysql.test-namespace.svc.cluster.local:3306/mycat" user="mycat" password="cathaylife" />
     	</dataHost>
     
     	<dataHost name="mysql-stateful-3" maxCon="1000" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="jdbc" switchType="1"  slaveThreshold="100">
     		<heartbeat>select user()</heartbeat>
-    		<writeHost host="hostM1" url="jdbc:mysql://mysql-stateful-3.mysql.default.svc.cluster.local:3306/mycat" user="mycat" password="cathaylife" />
+    		<writeHost host="hostM1" url="jdbc:mysql://mysql-stateful-3.mysql.test-namespace.svc.cluster.local:3306/mycat" user="mycat" password="cathaylife" />
     	</dataHost>
     
     </mycat:schema>
