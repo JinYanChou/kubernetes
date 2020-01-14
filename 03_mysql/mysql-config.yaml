@@ -7,6 +7,6 @@ metadata:
     app: mysql
 data:
   MYSQL_ROOT_PASSWORD: cathaylife
-  # MYSQL_DATABASE: DBAB
-  # MYSQL_USER: dbab
-  # MYSQL_PASSWORD: dbab
+  MYSQL_DATABASE: mycat
+  MYSQL_USER: mycat
+  MYSQL_PASSWORD: cathaylife
