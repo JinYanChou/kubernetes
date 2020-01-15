@@ -7,9 +7,10 @@ metadata:
     app: mycat-service
 spec:
   ports:
-  - port: 8066
-    name: mycat
-  - port: 9066
-    name: mycat-admin
+  - name: mycat
+    port: 5432
+    targetPort: 8066
+  - name: mycat-admin
+    port: 9066
   selector:
     app: mycat
