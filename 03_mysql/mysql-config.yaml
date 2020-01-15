@@ -10,3 +10,4 @@ data:
   MYSQL_DATABASE: mycat
   MYSQL_USER: mycat
   MYSQL_PASSWORD: cathaylife
+  MYSQL_PORT: 5432
