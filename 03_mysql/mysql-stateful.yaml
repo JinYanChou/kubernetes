@@ -19,7 +19,7 @@ spec:
         image: mysql:5.7
         envFrom:
           - configMapRef:
-              name: mysql-config
+              name: mysql-env
         ports:
         - containerPort: 3306
           name: mysqldb
@@ -27,6 +27,16 @@ spec:
         - name: mysqldb
           mountPath: /var/lib/mysql
           subPath: mysql
+        - name: mysqld
+          mountPath: /etc/mysql/mysql.conf.d/mysqld.cnf
+          subPath: mysqld.cnf
+      volumes:
+      - name: mysqld
+        configMap:
+          name: mysqld-config
+          items:
+          - key: mysqld.cnf
+            path: mysqld.cnf
   volumeClaimTemplates:
   - metadata:
       name: mysqldb
