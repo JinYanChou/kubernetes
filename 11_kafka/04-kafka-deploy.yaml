@@ -18,7 +18,8 @@ spec:
     spec:
       containers:
       - name: kafka
-        image: wurstmeister/kafka
+        # image: wurstmeister/kafka
+        image: cathay-kafka:1.0
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9092
