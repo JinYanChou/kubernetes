@@ -4,7 +4,7 @@ kind: ConfigMap
 metadata:
   name: prometheus-config
 data:
-  prometheus.yaml: |
+  prometheus.yml: |
     global:
       scrape_interval: 5s
     scrape_configs:
@@ -46,16 +46,15 @@ spec:
         ports:
         - containerPort: 9090
         volumeMounts:
-        - name: prometheus-yaml
+        - name: prometheus-yml
           mountPath: /etc/prometheus/prometheus.yml
-          subPath: prometheus.yml
       volumes:
-      - name: prometheus-yaml
+      - name: prometheus-yml
         configMap:
           name: prometheus-config
           items:
-          - key: prometheus.yaml
-            path: prometheus.yaml
+          - key: prometheus.yml
+            path: prometheus.yml
 ---
 apiVersion: v1
 kind: Service
