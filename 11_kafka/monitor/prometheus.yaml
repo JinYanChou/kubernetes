@@ -50,3 +50,19 @@ spec:
           items:
           - key: prometheus.yaml
             path: prometheus.yaml
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: prometheus
+  name: prometheus
+  namespace: kafka
+spec:
+  ports:
+  - name: prometheus-port
+    protocol: TCP
+    port: 9090
+    targetPort: 9090
+  selector:
+    app: prometheus
