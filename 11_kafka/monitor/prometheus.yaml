@@ -39,6 +39,8 @@ spec:
     spec:
       containers:
       - image: prom/prometheus
+        args: 
+          - '--config.file=/etc/prometheus/prometheus.yml'
         imagePullPolicy: IfNotPresent
         name: prometheus
         ports:
