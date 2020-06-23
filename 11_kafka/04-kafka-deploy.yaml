@@ -32,5 +32,5 @@ spec:
           value: zookeeper-service.kafka.svc.cluster.local:2181
         - name: KAFKA_BROKER_ID
           value: "1"
-        - name: KAFKA_OPTS
+        - name: EXTRA_ARGS
           value: "-javaagent:/opt/kafka/prometheus/jmx_prometheus_javaagent-0.13.0.jar=9999:/opt/kafka/prometheus/kafka-2_0_0.yml"
