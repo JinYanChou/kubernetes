@@ -6,14 +6,17 @@ metadata:
   name: kafka-service
   namespace: kafka
 spec:
+  type: NodePort
   ports:
   - name: kafka-port
     protocol: TCP
     port: 9092
     targetPort: 9092
+    nodePort: 9092
   - name: kafka-jmx
     protocol: TCP
     port: 9999
     targetPort: 9999
+    nodePort: 9999
   selector:
     app: kafka

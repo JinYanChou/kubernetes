@@ -6,10 +6,12 @@ metadata:
   name: kafka-exporter-service
   namespace: kafka
 spec:
+  type: NodePort
   ports:
   - name: kafka-exporter-port
     protocol: TCP
     port: 9308
     targetPort: 9308
+    nodePort: 9308
   selector:
     app: kafka-exporter
